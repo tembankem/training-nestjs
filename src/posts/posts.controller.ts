@@ -2,7 +2,7 @@ import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/commo
 import { PostsService } from './posts.service';
 import { CreatePostDto } from './dto/create-post.dto';
 import { UpdatePostDto } from './dto/update-post.dto';
-import { Post as PostEntity } from './entities/post.entity';
+import { Posts as PostEntity } from './entities/post.entity';
 
 @Controller('posts')
 export class PostsController {
@@ -14,7 +14,7 @@ export class PostsController {
   }
 
   @Get()
-  async findAll(): Promise<PostEntity[]> {
+  async findAll() {
     return this.postsService.findAll();
   }
 
